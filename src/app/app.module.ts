@@ -1,3 +1,4 @@
+import { AuthGuardService } from './auth-guard.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {AngularFireModule} from '@angular/fire'
@@ -40,12 +41,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     
     RouterModule.forRoot([
         { path: '' , component: HomeComponent},
-        { path: 'products' , component: ProductsComponent},
-        { path: 'shopping-cart' , component: ShoppingCartComponent},
-        { path: 'check-out' , component: CheckOutComponent},
-        { path: 'order-success' , component: OrderSuccessComponent},
         { path: 'login' , component: LoginComponent},
-        { path: 'my-order' , component: MyOrderComponent},
+        
+        { path: 'products' , component: ProductsComponent , canActivate:[AuthGuardService]},
+        { path: 'shopping-cart' , component: ShoppingCartComponent, canActivate:[AuthGuardService]},
+        { path: 'check-out' , component: CheckOutComponent, canActivate:[AuthGuardService]},
+        { path: 'order-success' , component: OrderSuccessComponent , canActivate:[AuthGuardService]},
+       
+        { path: 'my-order' , component: MyOrderComponent, canActivate:[AuthGuardService]},
         { path: 'admin/products' , component:AdminProductsComponent },
         { path: 'admin/orders' , component:AdminOrdersComponent}        
       ]),
