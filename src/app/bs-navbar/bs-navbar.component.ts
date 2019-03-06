@@ -1,5 +1,7 @@
 import { AuthService } from './../auth.service';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { routerNgProbeToken } from '@angular/router/src/router_module';
 
 
 
@@ -10,7 +12,7 @@ import { Component } from '@angular/core';
 })
 export class BsNavbarComponent  {
   
-  constructor(public auth:AuthService) {
+  constructor(public auth:AuthService,router:Router) {
     
    }
 

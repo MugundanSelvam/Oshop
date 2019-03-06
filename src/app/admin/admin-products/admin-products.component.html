@@ -1,1 +1,33 @@
+
+<p>
 <a class="btn btn-primary" routerLink="/admin/products/new" >New Prodcut</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Title
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of products$|async">
+            <th>
+                    {{p.payload.val().title}}
+            </th>
+            <th>
+                    {{p.payload.val().price}}
+            </th>
+            <th>
+                    <button (click)="alerting()" class="btn btn-primary">Edit</button>
+            </th>
+        </tr>    
+    </tbody>
+</table>
