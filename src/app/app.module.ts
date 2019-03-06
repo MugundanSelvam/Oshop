@@ -49,7 +49,7 @@ import { ProductService } from './product.service';
     FormsModule,
     
     RouterModule.forRoot([
-        { path: '' , component: HomeComponent},
+        { path: '' , component: ProductsComponent},
         { path: 'products' , component: ProductsComponent},
         { path: 'login' , component: LoginComponent},
         { path: 'shopping-cart' , component: ShoppingCartComponent},

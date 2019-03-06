@@ -23,7 +23,7 @@
                     {{p.payload.val().title}}
             </th>
             <th>
-                    {{p.payload.val().price}}
+                    {{p.payload.val().price|currency:'USD':true}}
             </th>
             <th>
                     <button (click)="alerting()" class="btn btn-primary">Edit</button>
